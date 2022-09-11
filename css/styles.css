@@ -28,9 +28,11 @@ img {
 }
 .x__cards {
   background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   width: 100%;
-  height: 50%;
+  height: 33%;
   color: white;
   font-size: 0.7rem;
 }
@@ -68,7 +70,7 @@ img {
   position: absolute;
   top: 55%;
   left: 7%;
-  font-size: 1rem;
+  font-size: 1.7em;
 }
 .x__cards__card-front .card-name {
   position: absolute;
@@ -145,4 +147,42 @@ img {
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 800px) {
+  .x {
+    flex-direction: row;
+  }
+  .x__cards {
+    height: 100%;
+    flex-basis: 35%;
+    background-image: url("../images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    font-size: 1rem;
+  }
+  .x__cards__front-container {
+    width: 400px;
+    top: 20%;
+    bottom: revert;
+    left: revert;
+    right: 0%;
+    translate: 30%;
+  }
+  .x__cards__back-container {
+    width: 400px;
+    bottom: 20%;
+    top: revert;
+    right: 0%;
+    left: revert;
+    translate: 50% 0;
+  }
+  .x__forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 65%;
+  }
+  .x__forms__form {
+    max-width: 350px;
+  }
 }/*# sourceMappingURL=styles.css.map */
