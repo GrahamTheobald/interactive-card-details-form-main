@@ -36,6 +36,7 @@ img {
     align-items: center;
     height: 100%;
     width: 100%;
+    // max-width: 500px;
     &__cards {
         background-image: url('../images/bg-main-mobile.png');
         background-repeat: no-repeat;
@@ -99,6 +100,11 @@ img {
         padding: 1.5rem;
         &__form{
             @include flexCol;
+            div {
+                input{
+                    width:100%;
+                }
+            }
             label {
                 margin-top: .5rem;
                 font-size: .7rem;
@@ -113,9 +119,20 @@ img {
                 border: 1px solid $LightGrayishViolet;
                 border-radius: .5rem;
             }
+            input:focus, input:focus-visible {
+                outline: none;
+                border: 1px solid;
+                border-image-slice: 1;
+                border-width: 1px;
+                border-image-source: $LinearGradient;
+            }
             input::placeholder {
                 font-weight: 600;
                 color: $DarkGrayishViolet;
+            }
+            .input-error {
+                border: 1px solid $Red;
+                
             }
             .mmyycvc {
                 display: flex;
@@ -131,7 +148,7 @@ img {
                 }
                 div:nth-child(3) {
                     flex: 3;
-            }
+                }
             }
             button {
                 margin-top: 1rem;
@@ -142,6 +159,12 @@ img {
                 border-radius: .5rem;
                 outline: none;
                 border: none;
+            }
+            .error {
+                font-size: .5rem;
+                margin-bottom: .5rem;
+                color: $Red;
+
             }
         }
     }
@@ -184,7 +207,7 @@ img {
             align-items: center;
             flex-basis: 65%;
             &__form {
-                max-width: 350px;
+                max-width: 370px;
             }
         }
     }

@@ -91,6 +91,9 @@ img {
   display: flex;
   flex-direction: column;
 }
+.x__forms__form div input {
+  width: 100%;
+}
 .x__forms__form label {
   margin-top: 0.5rem;
   font-size: 0.7rem;
@@ -105,6 +108,13 @@ img {
   border: 1px solid hsl(270deg, 3%, 87%);
   border-radius: 0.5rem;
 }
+.x__forms__form input:focus, .x__forms__form input:focus-visible {
+  outline: none;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+}
 .x__forms__form input::-moz-placeholder {
   font-weight: 600;
   color: hsl(279deg, 6%, 55%);
@@ -116,6 +126,9 @@ img {
 .x__forms__form input::placeholder {
   font-weight: 600;
   color: hsl(279deg, 6%, 55%);
+}
+.x__forms__form .input-error {
+  border: 1px solid hsl(0deg, 100%, 66%);
 }
 .x__forms__form .mmyycvc {
   display: flex;
@@ -143,6 +156,11 @@ img {
   border-radius: 0.5rem;
   outline: none;
   border: none;
+}
+.x__forms__form .error {
+  font-size: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: hsl(0deg, 100%, 66%);
 }
 
 .hidden {
@@ -183,6 +201,6 @@ img {
     flex-basis: 65%;
   }
   .x__forms__form {
-    max-width: 350px;
+    max-width: 370px;
   }
 }/*# sourceMappingURL=styles.css.map */
