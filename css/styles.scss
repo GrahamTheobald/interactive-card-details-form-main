@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&family=Space+Grotesk:wght@500&display=swap');
+
+$LinearGradient: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)); // active input border)
+$Red: hsl(0, 100%, 66%); //(input errors)
+$LightGrayishViolet: hsl(270, 3%, 87%);
+$DarkGrayishViolet: hsl(279, 6%, 55%);
+$VeryDarkViolet: hsl(278, 68%, 11%);
+
+$CardWidth: 270px;
+
+@mixin flexCol {
+    display: flex;
+    flex-direction: column;
+}
+*, *::before, *::after {
+    font-family: 'Libre Franklin', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    // border: 1px solid red !important;
+    // background-color: hsla(100, 100%, 50%, 0.1) !important;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.x {
+    @include flexCol;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    &__cards {
+        background-image: url('../images/bg-main-mobile.png');
+        position: relative;
+        width: 100%;
+        height: 50%;
+        color: white;
+        font-size: .7rem;
+        &__front-container {
+            position: absolute;
+            bottom: -15%;
+            left: 5%;
+            width: $CardWidth; 
+        }
+        &__back-container {
+            position: absolute;
+            width: $CardWidth;
+            right: 5%;
+            top: 10%;
+        }
+        &__card-back {
+            position: relative;
+            .card-security-code {
+                position: absolute;
+                top: 50%;
+                right: 10%;
+                translate: 0 -50%;
+            }
+        }
+        &__card-front {
+            position: relative;
+            .card-logo{
+                position: absolute;
+                top: 10%;
+                left: 7%;
+                width: 3rem;
+            }
+            .card-number{
+                position: absolute;
+                top: 55%;
+                left: 7%;
+                font-size: 1rem;
+            }
+            .card-name {
+                position:absolute;
+                bottom: 10%;
+                left: 7%;
+            }
+            .card-expiry {
+                position:absolute;
+                bottom: 10%;
+                right: 7%;
+            }       
+        }
+    }
+    &__forms {
+        // height: 100%;
+        margin: 3rem 0 2rem 0;
+        width: 100%;
+        padding: 1.5rem;
+        &__form{
+            @include flexCol;
+            label {
+                margin-top: .5rem;
+                font-size: .7rem;
+                font-weight: 600;
+                color: $VeryDarkViolet;
+                max-width: 100%;
+            }
+            input {
+                margin: .5rem 0;
+                padding: .8rem;
+                max-width: 100%;
+                border: 1px solid $LightGrayishViolet;
+                border-radius: .5rem;
+            }
+            input::placeholder {
+                font-weight: 600;
+                color: $DarkGrayishViolet;
+            }
+            .mmyycvc {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 1rem;
+                div {
+                    @include flexCol;
+                    min-width: 0;
+                }
+                div:nth-child(1),div:nth-child(2) {
+                    flex: 1;
+                }
+                div:nth-child(3) {
+                    flex: 3;
+            }
+            }
+            button {
+                margin-top: 1rem;
+                padding: 1rem;
+                background-color: $VeryDarkViolet;
+                color: white;
+                font-weight: 600;
+                border-radius: .5rem;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
