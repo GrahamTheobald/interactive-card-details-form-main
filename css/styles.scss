@@ -60,6 +60,7 @@ img {
         }
         &__card-back {
             position: relative;
+            overflow: hidden;
             .card-security-code {
                 position: absolute;
                 top: 50%;
@@ -69,6 +70,7 @@ img {
         }
         &__card-front {
             position: relative;
+            overflow: hidden;
             .card-logo{
                 position: absolute;
                 top: 10%;
@@ -98,7 +100,11 @@ img {
         margin: 3rem 0 2rem 0;
         width: 100%;
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
         &__form{
+            max-width: 370px;
+            align-self: center;
             @include flexCol;
             div {
                 input{
@@ -118,6 +124,7 @@ img {
                 max-width: 100%;
                 border: 1px solid $LightGrayishViolet;
                 border-radius: .5rem;
+                text-transform: none;
             }
             input:focus, input:focus-visible {
                 outline: none;
@@ -129,6 +136,7 @@ img {
             input::placeholder {
                 font-weight: 600;
                 color: $DarkGrayishViolet;
+                text-transform: none;
             }
             .input-error {
                 border: 1px solid $Red;
@@ -137,17 +145,13 @@ img {
             .mmyycvc {
                 display: flex;
                 flex-direction: row;
-                justify-content: flex-start;
                 gap: 1rem;
-                div {
-                    @include flexCol;
-                    min-width: 0;
+            
+                .mm, .yy {
+                    flex:1;  
                 }
-                div:nth-child(1),div:nth-child(2) {
-                    flex: 1;
-                }
-                div:nth-child(3) {
-                    flex: 3;
+                .cvc {
+                    flex:2;
                 }
             }
             button {
@@ -159,12 +163,49 @@ img {
                 border-radius: .5rem;
                 outline: none;
                 border: none;
+                cursor: pointer;
             }
             .error {
                 font-size: .5rem;
                 margin-bottom: .5rem;
                 color: $Red;
 
+            }
+        }
+        &__thanks {
+            text-align: center;
+            width: 300px;
+            align-self: center;
+            @include flexCol;
+            align-items: center;
+            gap: 2rem;
+            img {
+                width: 3rem;
+            }
+            div {
+                @include flexCol;
+                gap: 1rem;
+                h1 {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: $VeryDarkViolet;
+                }
+                p {
+                    text-transform: none;
+                    color: $DarkGrayishViolet;
+                }
+            }
+            button {
+                width: 100%;
+                margin-top: 1rem;
+                padding: 1rem;
+                border: none;
+                outline: none;
+                border-radius: .5rem;
+                background-color: $VeryDarkViolet;
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
             }
         }
     }
@@ -188,16 +229,14 @@ img {
                 top: 20%;
                 bottom: revert;
                 left: revert;
-                right: 0%;
-                translate: 30%;
+                right: -25%;
             }
             &__back-container {
                 width: 400px;
                 bottom: 20%;
                 top: revert;
-                right: 0%;
+                right: -40%;
                 left: revert;
-                translate: 50% 0;
             }
             
         }
@@ -206,9 +245,6 @@ img {
             justify-content: center;
             align-items: center;
             flex-basis: 65%;
-            &__form {
-                max-width: 370px;
-            }
         }
     }
 }

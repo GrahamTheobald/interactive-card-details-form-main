@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./css/styles.css">
+  <script src="./script.js" defer></script>
   
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
@@ -31,7 +32,7 @@
             Jane Appleseed
           </p>
           <p class="card-expiry">
-            00/00
+            <span class="card-mm">00</span>/<span class="card-yy">00</span>
           </p>    
         </div>
       </div>
@@ -42,45 +43,52 @@
         <label for="form-name">
           Cardholder Name
         </label>
-        <div>
+        <div class="input-wrap">
           <input type="text" id="form-name" placeholder="e.g. Jane Appleseed">
+          <p class="error  hidden"></p>
         </div>
-        <p class="error  hidden"></p>
         <label for="form-card-number">
           Card Number
         </label>
-        <div>
+        <div class="input-wrap">
           <input type="text" id="form-card-number" placeholder="e.g. 1234 5678 9123 0000">
           <p class="error hidden"></p>
         </div>
         <div class="mmyycvc">
-          <div>
+          <div class="input-wrap mm">
             <label for="form-mm">Exp. Date</label>
             <input type="text" id="form-mm" placeholder="MM">
             <p class="error hidden"></p>
           </div>
-          <div>
+          <div class="input-wrap yy">
             <label for="form-yy">(MM/YY)</label>
             <input type="text" id="form-yy" placeholder="YY">
             <p class="error hidden"></p>
           </div>
-          <div>
+          <div class="input-wrap cvc">
             <label for="form-cvc">CVC</label>
             <input type="text" id="form-cvc" placeholder="e.g. 123">
             <p class="error hidden"></p>
-
           </div>
         </div>
         <button type="submit">
           Confirm
         </button>
       </form>
-        
-      <!-- Completed state start -->
+
       <div class="x__forms__thanks hidden">
-        Thank you!
-        We've added your card details
-        Continue
+        <img src="./images/icon-complete.svg" alt="complete">
+        <div>
+          <h1>
+            Thank you!
+          </h1>
+          <p>
+            We've added your card details
+          </p>
+        </div>
+        <button>
+          Continue
+        </button>
       </div>
     </div>
     </main>
