@@ -66,11 +66,19 @@ img {
                 top: 50%;
                 right: 10%;
                 translate: 0 -50%;
+                overflow: hidden;
+                white-space: nowrap;
+                max-width: calc(15 * 1em);
+                text-align: right;
             }
         }
         &__card-front {
             position: relative;
             overflow: hidden;
+            p {
+                overflow: hidden;
+                white-space: nowrap;
+            }
             .card-logo{
                 position: absolute;
                 top: 10%;
@@ -82,16 +90,22 @@ img {
                 top: 55%;
                 left: 7%;
                 font-size: 1.7em;
+                width: calc(11.9 * 1em);
+                text-align: right;
+             
             }
             .card-name {
                 position:absolute;
                 bottom: 10%;
                 left: 7%;
+                max-width: (15 * 1em);
             }
             .card-expiry {
                 position:absolute;
                 bottom: 10%;
                 right: 7%;
+                width: (5 * 1em);
+                text-align: right;
             }       
         }
     }

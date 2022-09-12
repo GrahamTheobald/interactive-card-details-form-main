@@ -57,10 +57,18 @@ img {
   top: 50%;
   right: 10%;
   translate: 0 -50%;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 15em;
+  text-align: right;
 }
 .x__cards__card-front {
   position: relative;
   overflow: hidden;
+}
+.x__cards__card-front p {
+  overflow: hidden;
+  white-space: nowrap;
 }
 .x__cards__card-front .card-logo {
   position: absolute;
@@ -73,16 +81,21 @@ img {
   top: 55%;
   left: 7%;
   font-size: 1.7em;
+  width: 11.9em;
+  text-align: right;
 }
 .x__cards__card-front .card-name {
   position: absolute;
   bottom: 10%;
   left: 7%;
+  max-width: 15em;
 }
 .x__cards__card-front .card-expiry {
   position: absolute;
   bottom: 10%;
   right: 7%;
+  width: 5em;
+  text-align: right;
 }
 .x__forms {
   margin: 3rem 0 2rem 0;
