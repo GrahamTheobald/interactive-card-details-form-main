@@ -1,24 +1,32 @@
 const form = document.querySelector(".x__forms__form")
 const formName = form.querySelector("#form-name")
+const inputs = form.querySelectorAll("input")
 
 
 const INPUT_MAP = {
     'form-name': {
         'function': formatName,
-        'card-input': '.card-name'},
+        'cardInput': '.card-name'},
     'form-card-number': {
         'function': formatNumber,
-        'card-input': '.card-number'},
+        'cardInput': '.card-number'},
     'form-mm': {
         'function': formatMM,
-        'card-input': '.card-mm'},
+        'cardInput': '.card-mm'},
     'form-yy': {
         'function': formatYY,
-        'card-input': '.card-yy'},
+        'cardInput': '.card-yy'},
     'form-cvc': {
         'function': formatCVC,
-        'card-input': '.card-cvc'},
+        'cardInput': '.card-security-code'},
 }
+
+inputs.forEach(input => {
+    input.addEventListener("input", e => {
+        console.log('rat')
+        updateCard(e.target)
+    })
+})
 
 form.addEventListener("submit", e => {
     e.preventDefault()
@@ -33,6 +41,11 @@ form.addEventListener("submit", e => {
         
     }
 })
+
+function updateCard(input) {
+    const cardInput = document.querySelector(INPUT_MAP[input.id].cardInput)
+    cardInput.textContent = input.value
+}
 
 function checkErrors(input) {
     if (blankCheck(input)) return "Can't be blank."

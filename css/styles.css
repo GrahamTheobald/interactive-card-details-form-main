@@ -57,17 +57,16 @@ img {
   top: 50%;
   right: 10%;
   translate: 0 -50%;
-  overflow: hidden;
+  overflow-x: scroll;
   white-space: nowrap;
   max-width: 15em;
   text-align: right;
 }
 .x__cards__card-front {
   position: relative;
-  overflow: hidden;
 }
 .x__cards__card-front p {
-  overflow: hidden;
+  overflow-x: scroll;
   white-space: nowrap;
 }
 .x__cards__card-front .card-logo {
